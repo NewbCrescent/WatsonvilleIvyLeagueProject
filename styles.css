@@ -1,0 +1,346 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+:root {
+    --blue: #0f649b;
+    --red: #b31e23;
+    --darkred: #8f181c; /* button hover color */
+    --lightblue: #1482C9;
+    --lightdarkblue: #1068a0; /* button hover color */
+}
+
+section {
+    position: relative;
+}
+
+#navigation {
+    background-color: var(--blue);
+    padding: 1rem 0;
+}
+
+nav {
+    display: flex;
+}
+
+nav img {
+    max-height: 3.25rem;
+    padding-left: 3rem;
+}
+
+nav ul{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    list-style-type: none;
+}
+
+nav ul * {
+    color: white;
+    font-size: 1.25rem;
+    margin-inline: 7.5rem;
+    padding-inline: 0.5rem;
+    cursor: pointer;
+}
+
+#hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(/IvyLeagueProjectTest/Images/img1\ copy.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 80vh;
+    position: relative;
+    overflow: hidden;
+}
+
+#hero div {
+    padding: 5rem 3rem;
+}
+
+#hero div h1, #hero div p {
+    color: white;
+}
+
+#hero div h1 {
+    font-size: 4em;
+    max-width: 8ch;
+}
+
+#hero div p {
+    margin-top: 1rem;
+    font-size: 2em;
+    max-width: 50ch;
+}
+
+#hero div button {
+    cursor: pointer;
+    margin-top: 1em;
+    max-width: 15rem;
+    max-height: 4rem;
+    border: none;
+    border-radius: 15px;
+    background: var(--red);
+    transition: all 0.25s ease;
+}
+
+#hero div button:hover {
+    background: var(--darkred);
+}
+
+#hero div button p {
+    font-size: 1.75em;
+    margin: 0;
+    padding: 1em 0.75em;
+    color: white;
+}
+/*
+#hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px; 
+    background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, #f7f7f7 100%);
+    z-index: 2;
+  }
+*/
+
+.bottom-wave-transition {
+    position: absolute;
+    bottom: -85px;
+    left: -48px;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    height: 0px;
+    transform: rotate(180deg);
+}
+
+.bottom-wave-transition svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 51px;
+}
+
+.bottom-wave-transition .shape-fill {
+    fill: #F7F7F7;
+}
+
+#about {
+    position: relative;
+}
+
+.img-text-content {
+    background-color: #f7f7f7;
+    min-height: 300px;
+    display: flex;
+    padding-bottom: 80px;
+}
+
+.img-text-content img {
+    margin: 5rem;
+    max-width: 40%;
+    border-radius: 10px;
+}
+
+.img-text-content div {
+    margin-top: 5rem;
+    margin-right: 1rem;
+    max-width: 60ch;
+    display: flex;
+    flex-direction: column;
+}
+
+.img-text-content div h2 {
+    font-size: 2.5em;
+    text-align: center;
+    margin: 0.25em;
+}
+
+.img-text-content div hr, .instagram-content div hr {
+    border-top: 3px dashed var(--blue);
+}
+
+.img-text-content div p {
+    margin-top: 0.5em;
+    text-align: left;
+    font-size: 1.5em;
+    color: #696969;
+}
+
+.img-text-content div button, .instagram-content div button, .donation-content div button {
+    cursor: pointer;
+    margin-top: 1em;
+    max-width: 15rem;
+    max-height: 4rem;
+    border: none;
+    border-radius: 15px;
+    align-self: center;
+    background-color: var(--lightblue);
+    transition: all 0.25s ease;
+}
+
+.img-text-content div button:hover, .instagram-content div button:hover,  .donation-content div button:hover {
+    background-color: var(--lightdarkblue);
+}
+
+.img-text-content div button p, .instagram-content div button p, .donation-content div button p {
+    font-size: 1.75em;
+    margin: 0;
+    padding: 1em 0.75em;
+    color: white;
+}
+
+.wave-two {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.wave-two svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 51px;
+    transform: rotateY(180deg);
+}
+
+.wave-two .shape-fill {
+    fill: #FFFFFF;
+}
+
+#goals {
+    position: relative;
+}
+
+.three-related-content-together {
+    background-color: #ffffff;
+    padding: 80px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.three-related-content-together .three-goals-heading h2 {
+    font-size: 2.5em;
+    margin-bottom: 0.25em;
+}
+
+.three-related-content-together .three-goals-heading hr {
+    border-top: 3px dashed var(--blue);
+    margin-bottom: 3rem;
+}
+
+.three-related-content-together .three-goals {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-inline: 5rem;
+}
+
+.three-related-content-together .three-goals h3 {
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+.three-related-content-together .three-goals p {
+    font-size: 1.5em;
+    color: #696969;
+    text-align: center;
+}
+
+.quote-content {
+    padding: 80px 0;
+    background-image: linear-gradient(rgba(1, 102, 156, 0.8), rgba(1, 102, 156, 0.8)), url(/IvyLeagueProjectTest/Images/img1\ copy.png) ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: grid;
+    place-items: center;
+}
+
+.quote-box {
+    padding: 3rem;
+    max-width: 50%;
+    background-color: rgba(0, 91, 140, 0.8);
+    border-radius: 1.5rem;
+    color: white;
+}
+
+.quote-box q {
+    font-size: 1.5em;
+    line-height: 50px;
+}
+
+.quote-box p {
+    text-align: right;
+    font-size: 1.5em;
+}
+
+.instagram-content {
+    padding: 80px 0;
+}
+
+.instagram-content div {
+    width:fit-content;
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.instagram-content div h2 {
+    font-size: 2.5em;
+    margin: 0.25em 0;
+}
+
+.instagram-content div hr {
+    margin-bottom: 1em;
+}
+
+.donation-content {
+    padding: 80px 0;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(/IvyLeagueProjectTest/Images/img3.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: grid;
+    place-items: center;
+}
+
+.donation-content div {
+    max-width: 80%;
+    display: flex;
+    flex-direction: column;
+}
+
+.donation-content div h2 {
+    color: white;
+    font-size: 45px;
+    text-align: center;
+}
+
+.donation-content div p {
+    color: white;
+    text-align: center;
+    font-size: 1.5em;
+    margin: 0.5em 0;
+}
+
+.footer-content {
+    padding: 20px 40px;
+}
+
+.footer-content div {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.footer-content div p {
+    color: #696969;
+}

@@ -1,5 +1,4 @@
-Check out my website: [Link]([)](https://newbcrescent.github.io/WatsonvilleIvyLeagueProject/)https://newbcrescent.github.io/WatsonvilleIvyLeagueProject/
+# ClickSpeedWebsite
+Test your cps
 
-
-## Author
-Authors' name: Uriel Marinez-Uribe
+The website: [Link](https://newbcrescent.github.io/WatsonvilleIvyLeagueProject/)

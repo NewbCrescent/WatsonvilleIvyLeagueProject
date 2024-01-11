@@ -13,6 +13,142 @@
     --lightdarkblue: #1068a0; /* button hover color */
 }
 
+@media (max-aspect-ratio: 740/845) { /* First part is for the hamburger mobile menu */
+    
+    body #navigation {
+        padding: 3rem 0;
+    }
+
+    #navigation #nav-pc ul{
+        display: none;
+    }
+
+    body #div-mobile {
+        display: block;
+    }
+
+    .hamburger-menu {
+        --height-of-x: calc(1.9rem * 1.41421356237);
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        width: fit-content;
+        position: absolute;
+        left: 1.5rem;
+        top: 0.8rem;
+        z-index: 2;
+        cursor: pointer;
+    }
+
+    .hamburger-menu input, .hamburger-menu::before, .hamburger-menu::after {
+        content: "";
+        width: 3rem;
+        height: 0.3rem;
+        border-radius: 999px;
+        transform-origin: left center;
+        background-color: black;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .hamburger-menu:has(input:checked) {
+        position: fixed;
+    }
+
+    .hamburger-menu input {
+        appearance: none;
+        outline: none;
+        pointer-events: none;
+    }
+
+    .hamburger-menu input:checked {
+        opacity: 0;
+    }
+
+    .hamburger-menu:has(input:checked)::before {
+        rotate: 45deg;
+        width: var(--height-of-x);
+        translate: 0 calc(0.3rem / -2);
+        background-color: white;
+    }
+
+    .hamburger-menu:has(input:checked)::after {
+        rotate: -45deg;
+        width: var(--height-of-x);
+        translate: 0 calc(0.3rem / 2);
+        background-color: white;
+    }
+
+    #sidebar {
+        translate: -200% -21%;
+        transition: all 0.2s ease-in-out;
+        padding: 1rem;
+        padding-top: calc(1.9rem + 0.8rem + 1rem + 4.5rem);
+        color: white;
+        max-width: 10rem;
+        min-height: 100lvh;
+        background-color: rgba(0, 0, 0, 0.85);
+        position: fixed;
+        z-index: 1;
+    }
+
+    #sidebar nav ul {
+        list-style-type: none;
+    }
+
+    #sidebar nav ul li:first-child {
+        padding-top: calc(1.9rem + 0.8rem + 1rem + 0.5rem);
+    }
+
+    #sidebar nav ul li p {
+        padding-bottom: 1rem;
+    }
+
+    .hamburger-menu:has(input:checked) + #sidebar {
+        translate: 0% -21%;
+    }
+
+    body #nav-pc img {
+        position: absolute;
+        height: clamp(30px, 8vw, 3.25rem);
+        right: 2rem;
+        top: 1rem;
+    }
+
+    body #hero div h1 { /* changing size to fit mobile screens */
+        font-size: 3em;
+    }
+
+    .img-text-content.img-text-content { /* this for the sections optimized for mobile */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .img-text-content.img-text-content img {
+        margin: 0;
+        max-width: 80vw;
+        max-height: 80vw;
+    }
+
+    #last-project .img-text-content.img-text-content {
+        flex-direction: column-reverse;
+    }
+
+    .three-related-content-together.three-related-content-together .three-goals { /* goals sections */
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
+
+    .donation-content.donation-content div h2 {
+        font-size: 2em;
+    }
+
+}
+
+
+
 section {
     position: relative;
 }
@@ -20,30 +156,31 @@ section {
 #navigation {
     background-color: var(--blue);
     padding: 1rem 0;
+    position: relative;
 }
 
-nav {
+#nav-pc {
     display: flex;
 }
 
-nav img {
+#nav-pc img {
     max-height: 3.25rem;
     padding-left: 3rem;
 }
 
-nav ul{
+#nav-pc ul{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(5, 1fr);
     list-style-type: none;
     width: 100%;
 }
 
-nav ul * {
+#nav-pc ul * {
     display: grid;
     place-items: center;
 }
 
-nav ul * p {
+#nav-pc ul * p {
     font-size: 1.25rem;
     cursor: pointer;
     color: white;
@@ -51,8 +188,13 @@ nav ul * p {
     padding-inline: 0.5rem;
 }
 
+#div-mobile {
+    display: none;
+}
+
 #hero {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(Images/img1.png);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(Images/img4.jpg);
+    background-position: 50% 40%;
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 80vh;
@@ -142,19 +284,19 @@ nav ul * p {
 .img-text-content {
     background-color: #f7f7f7;
     min-height: 300px;
-    display: flex;
-    padding-bottom: 80px;
+    display: grid;
+    place-items: center;
+    grid-template-columns: 1fr 1fr;
+    padding: 80px 0;
 }
 
 .img-text-content img {
-    margin: 5rem;
-    max-width: 40%;
+    max-width: 40vw;
+    max-height: 40vw;
     border-radius: 10px;
 }
 
 .img-text-content div {
-    margin-top: 5rem;
-    margin-right: 1rem;
     max-width: 60ch;
     display: flex;
     flex-direction: column;
@@ -289,8 +431,21 @@ nav ul * p {
     font-size: 1.5em;
 }
 
+#last-project .img-text-content {
+    background-color: white;
+}
+
+#last-project .img-text-content div p {
+    text-align: center;
+}
+
+#last-project .wave-two .shape-fill {
+    fill: #f7f7f7;
+}
+
 .instagram-content {
     padding: 80px 0;
+    background-color: #F7F7F7;
 }
 
 .instagram-content div {
@@ -303,6 +458,7 @@ nav ul * p {
 .instagram-content div h2 {
     font-size: 2.5em;
     margin: 0.25em 0;
+    text-align: center;
 }
 
 .instagram-content div hr {

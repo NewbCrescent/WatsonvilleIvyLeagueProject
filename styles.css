@@ -13,7 +13,7 @@
     --lightdarkblue: #1068a0; /* button hover color */
 }
 
-@media (max-aspect-ratio: 740/845) { /* First part is for the hamburger mobile menu */
+@media (max-aspect-ratio: 840/845) { /* First part is for the hamburger mobile menu */
     
     body #navigation {
         padding: 3rem 0;
@@ -100,7 +100,10 @@
     }
 
     #sidebar nav ul li p {
-        padding-bottom: 1rem;
+        width: fit-content;
+        margin-bottom: 1rem;
+        cursor: pointer;
+        padding-right: 0.5em;
     }
 
     .hamburger-menu:has(input:checked) + #sidebar {
@@ -131,20 +134,38 @@
         max-height: 80vw;
     }
 
+    .img-text-content.img-text-content div p {
+        margin-inline: 0.5em;
+    }
+
     #last-project .img-text-content.img-text-content {
         flex-direction: column-reverse;
+    }
+
+    #last-project .img-text-content.img-text-content div p {
+        text-align: left;
     }
 
     .three-related-content-together.three-related-content-together .three-goals { /* goals sections */
         display: flex;
         flex-wrap: wrap;
+        margin-inline: 0.5em;
         gap: 2rem;
     }
 
-    .donation-content.donation-content div h2 {
+    .donation-content.donation-content div h2 { /* donation */
         font-size: 2em;
     }
 
+    #photo-gallery .photos div:last-of-type {
+        grid-template-columns: 1fr;
+    }
+
+    div #middle-img {
+        position: static;
+        transform: rotate(-30deg);
+        max-width: 40%;
+    }
 }
 
 
@@ -170,7 +191,7 @@ section {
 
 #nav-pc ul{
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     list-style-type: none;
     width: 100%;
 }
@@ -319,7 +340,7 @@ section {
     color: #696969;
 }
 
-.img-text-content div button, .instagram-content div button, .donation-content div button {
+.img-text-content div button, .instagram-content div button, .donation-content div button, .photos button {
     cursor: pointer;
     margin-top: 1em;
     max-width: 15rem;
@@ -331,11 +352,11 @@ section {
     transition: all 0.25s ease;
 }
 
-.img-text-content div button:hover, .instagram-content div button:hover,  .donation-content div button:hover {
+.img-text-content div button:hover, .instagram-content div button:hover,  .donation-content div button:hover, .photos button:hover {
     background-color: var(--lightdarkblue);
 }
 
-.img-text-content div button p, .instagram-content div button p, .donation-content div button p {
+.img-text-content div button p, .instagram-content div button p, .donation-content div button p, .photos button p {
     font-size: 1.75em;
     margin: 0;
     padding: 1em 0.75em;
@@ -344,7 +365,7 @@ section {
 
 .wave-two {
     position: absolute;
-    bottom: 0;
+    bottom: -5px;
     left: 0;
     width: 100%;
     overflow: hidden;
@@ -440,6 +461,76 @@ section {
 }
 
 #last-project .wave-two .shape-fill {
+    fill: var(--blue);
+}
+
+.photos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 80px 0;
+    background-color: var(--blue);
+}
+
+.photos div:first-of-type h2 {
+    font-size: 2.5em;
+    margin: 0.25em;
+    color: white;
+}
+
+.photos div:first-of-type hr {
+    border-top: 3px dashed white;
+    border-bottom: 0px;
+}
+
+.photos p {
+    font-size: 1.5em;
+    color: white;
+    text-align: center;
+}
+
+.photos img {
+    border-radius: 10px;
+}
+
+.photos div:last-of-type {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    place-items: center;
+    gap: 2rem;
+}
+
+.photos div:last-of-type img {
+    max-width: 40%;
+}
+
+.photos div:last-of-type img:nth-of-type(even) {
+    transform-origin: center;
+    transform: rotate(30deg);
+}
+
+.photos div:last-of-type img:nth-of-type(odd) {
+    transform-origin: center;
+    transform: rotate(-30deg);
+}
+
+#middle-img {
+    max-width: 20%;
+    position: absolute;
+    top: 35%;
+    transform: rotate(0deg);
+}
+
+#photo-gallery .photos button {
+    background-color: var(--red);
+}
+
+#photo-gallery .photos button:hover {
+    background-color: var(--darkred);
+}
+
+#photo-gallery .wave-two svg .shape-fill {
     fill: #f7f7f7;
 }
 

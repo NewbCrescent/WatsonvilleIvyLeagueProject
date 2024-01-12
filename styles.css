@@ -158,7 +158,9 @@
     }
 
     #photo-gallery .photos div:last-of-type {
+        padding: 40px 0;
         grid-template-columns: 1fr;
+        gap: 4rem;
     }
 
     div #middle-img {
@@ -498,11 +500,17 @@ section {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     place-items: center;
-    gap: 2rem;
+    gap: 8rem;
+    padding-top: 20px;
+    padding-bottom: 10px;
 }
 
 .photos div:last-of-type img {
-    max-width: 40%;
+    max-width: 50%;
+}
+
+.photos div:last-of-type img:nth-of-type(2) {
+    max-width: 60%;
 }
 
 .photos div:last-of-type img:nth-of-type(even) {

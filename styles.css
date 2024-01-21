@@ -111,11 +111,13 @@
         translate: 0% -21%;
     }
 
-    body #nav-pc img {
+    body #nav-pc picture img {
         position: absolute;
-        height: clamp(30px, 8vw, 3.25rem);
+        max-height: 60px;
         right: 2rem;
-        top: 1rem;
+        top: 50%;
+        transform: translate(0, -50%);
+        padding: 0;
     }
 
     body #hero div h1 { /* changing size to fit mobile screens */

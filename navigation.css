@@ -1,0 +1,149 @@
+@media (max-aspect-ratio: 840/845) { /* First part is for the hamburger mobile menu */
+    
+    body #navigation {
+        padding: 2rem 0;
+    }
+
+    #navigation #nav-pc ul{
+        display: none;
+    }
+
+    body #div-mobile {
+        display: block;
+    }
+
+    .hamburger-menu {
+        --height-of-x: calc(1.9rem * 1.41421356237); /* have to times it by the sqrt(2) b/c trigonometry so that the x-width stays normal */
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        width: fit-content;
+        position: absolute;
+        left: 1.5rem;
+        top: 0.8rem;
+        z-index: 2;
+        cursor: pointer;
+    }
+
+    .hamburger-menu input, .hamburger-menu::before, .hamburger-menu::after {
+        content: "";
+        width: 3rem;
+        height: 0.3rem;
+        border-radius: 999px;
+        transform-origin: left center;
+        background-color: black;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .hamburger-menu:has(input:checked) {
+        position: fixed;
+    }
+
+    .hamburger-menu input {
+        appearance: none;
+        outline: none;
+        pointer-events: none;
+    }
+
+    .hamburger-menu input:checked {
+        opacity: 0;
+    }
+
+    .hamburger-menu:has(input:checked)::before {
+        rotate: 45deg;
+        width: var(--height-of-x);
+        translate: 0 calc(0.3rem / -2);
+        background-color: white;
+    }
+
+    .hamburger-menu:has(input:checked)::after {
+        rotate: -45deg;
+        width: var(--height-of-x);
+        translate: 0 calc(0.3rem / 2);
+        background-color: white;
+    }
+
+    #sidebar {
+        translate: -200% -21%;
+        transition: all 0.2s ease-in-out;
+        padding: 1rem;
+        padding-top: calc(1.9rem + 0.8rem + 1rem + 4.5rem + 2rem);
+        color: white;
+        max-width: 10rem;
+        min-height: 100lvh;
+        background-color: rgba(0, 0, 0, 0.85);
+        position: fixed;
+        z-index: 1;
+    }
+
+    #sidebar nav ul {
+        list-style-type: none;
+    }
+
+    #sidebar nav ul li:first-child {
+        padding-top: calc(1.9rem + 0.8rem + 1rem + 0.5rem);
+    }
+
+    #sidebar nav ul li p {
+        width: fit-content;
+        margin-bottom: 1rem;
+        cursor: pointer;
+        padding-right: 0.5em;
+    }
+
+    .hamburger-menu:has(input:checked) + #sidebar {
+        translate: 0% -21%;
+    }
+
+    body #nav-pc picture img {
+        position: absolute;
+        max-height: 60px;
+        right: 2rem;
+        top: 50%;
+        transform: translate(0, -50%);
+        padding: 0;
+    }
+}
+
+section {
+    position: relative;
+}
+
+#navigation {
+    background-color: var(--blue-nav);
+    padding: 0.5rem 0;
+    position: relative;
+}
+
+#nav-pc {
+    display: flex;
+}
+
+#nav-pc img {
+    max-height: 3.75rem;
+    padding-left: 3rem;
+}
+
+#nav-pc ul{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    list-style-type: none;
+    width: 100%;
+}
+
+#nav-pc ul * {
+    display: grid;
+    place-items: center;
+}
+
+#nav-pc ul * p {
+    font-size: 1.25rem;
+    cursor: pointer;
+    color: white;
+    text-align: center;
+    padding-inline: 0.5rem;
+}
+
+#div-mobile {
+    display: none;
+}

@@ -1,0 +1,15 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+:root {
+    --blue: #0f649b;
+    --blue-nav: #1178ba;
+    --red: #b31e23;
+    --darkred: #8f181c; /* button hover color */
+    --lightblue: #1482C9;
+    --lightdarkblue: #1068a0; /* button hover color */
+}

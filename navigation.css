@@ -84,11 +84,16 @@
         padding-top: calc(1.9rem + 0.8rem + 1rem + 0.5rem);
     }
 
-    #sidebar nav ul li p {
-        width: fit-content;
+    #sidebar nav ul li {
         margin-bottom: 1rem;
+    }
+
+    #sidebar nav ul li a {
+        width: fit-content;
         cursor: pointer;
         padding-right: 0.5em;
+        text-decoration: none;
+        color: white;
     }
 
     .hamburger-menu:has(input:checked) + #sidebar {
@@ -98,7 +103,7 @@
     body #nav-pc picture img {
         position: absolute;
         max-height: 60px;
-        right: 2rem;
+        right: min(2rem, 3.5vw);
         top: 50%;
         transform: translate(0, -50%);
         padding: 0;
@@ -136,12 +141,13 @@ section {
     place-items: center;
 }
 
-#nav-pc ul * p {
+#nav-pc ul * a {
     font-size: 1.25rem;
     cursor: pointer;
     color: white;
     text-align: center;
     padding-inline: 0.5rem;
+    text-decoration: none;
 }
 
 #div-mobile {

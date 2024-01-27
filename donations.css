@@ -14,6 +14,10 @@
     --lightdarkblue: #1068a0; /* button hover color */
 }
 
+@media (max-aspect-ratio: 840/845) {
+    
+}
+
 @media (max-width: 1000px) { 
     body header {
         background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(Images/img3variants/img3-1000.webp);
@@ -87,4 +91,73 @@ header div p {
 
 .bottom-wave-transition .shape-fill {
     fill: #F7F7F7;
+}
+
+.donations {
+    padding-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.donations h2 {
+    text-align: center;
+    font-size: 2.5em;
+}
+
+.donations label {
+    color: white;
+    padding: 1em 1.25em;
+    font-size: 1.75em;
+    cursor: pointer;
+    user-select: none;
+    border-radius: 15px;
+    max-width: 15rem;
+    max-height: 4rem;
+    background-color: var(--lightblue);
+    transition: all 0.25s ease;
+}
+
+.donations label:hover {
+    background-color: var(--lightdarkblue);
+}
+
+#open {
+    display: none;
+}
+
+.donations label:last-of-type {
+    display: none;
+}
+
+.donations:has(#open:checked) .gofundmeDonation {
+    display: none;
+}
+
+.donations:has(#open:checked) label:last-of-type {
+    display: inline-block;
+}
+
+.donations:has(#open:checked) label:first-of-type {
+    display: none;
+}
+
+.donations div {
+    display: flex;
+    gap: 1rem;
+    padding-inline: 2rem;
+    padding-top: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.gofundmeDonation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: clamp(200px, 20%,500px)
+}
+
+.gofundmeDonation img {
+    width: 80%;
 }

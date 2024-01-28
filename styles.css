@@ -501,6 +501,21 @@ button a {
     align-self: center;   
 }
 
+.instagram-content div button div {
+    padding: 1rem 0.75rem;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.instagram-content div button p {
+    padding: 0;
+}
+
+.instagram-content div button svg {
+    width: 1.75rem;
+}
+
 .donation-content {
     padding: 80px 0;
     background-color: sandybrown; /* just in case the media queries fail */
